@@ -2,6 +2,16 @@
 Create API definition classes from controllers
 
 
+## Generator options
+The following settings can be made via `.globalconfig` file
+
+| Key | Value(s) | Description |
+| --- | -------- | ----------- |
+| `api_definition_generate_on_build_only` | true / false | Whether the definition file(s) should only be generated on forced build or every time the IDE invokes the analyzer |
+| `api_definition_generator_target_namespace` | Your.Desired.Definition.Namespace | (optional( Namespace for the generated definition classes<br />If the namespace is not specified, the name of the Assembly will be used |
+| `api_definition_generator_destination_path` | /path/to/generate/the/files/to | (optional) Path where the files should be written to<br />If the path is not specified, the generator will create the files in the default TEMP dir and add them to to project|
+
+
 ## Example
 Controller
 ```c#
