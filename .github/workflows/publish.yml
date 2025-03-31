@@ -31,7 +31,7 @@ jobs:
         uses: actions/setup-dotnet@v4
       
       - name: Package  
-        run: dotnet pack ${{ github.workspace }}/src/ApiDefinitionGenerator/ApiDefinitionGenerator.csproj -c $BUILD_CONFIGURATION --output ${{ github.workspace }}/packages/
+        run: dotnet pack ${{ github.workspace }}/src/ApiDefinitionGenerator/ApiDefinitionGenerator.csproj -p:Version=1.$VERSION_MINOR.0 -c $BUILD_CONFIGURATION --output ${{ github.workspace }}/packages/
 
       - name: Push
         run: dotnet nuget push ${{ github.workspace }}/packages/*.nupkg --api-key ${{ secrets.NUGET_TOKEN }} --source https://api.nuget.org/v3/index.json --skip-duplicate
