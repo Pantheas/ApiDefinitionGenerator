@@ -1,0 +1,40 @@
+name: Publish NuGet package
+
+on:
+  # this relies on having branch protection setup
+  #push:
+  #  branches:
+  #    - main
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+  workflow_dispatch:
+
+env:
+  BUILD_CONFIGURATION: Release
+  PACKAGE_OUTPUT_ROOT_DIRECTORY: /packages
+  
+
+jobs:
+  package:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    env:
+      VERSION_MINOR: ${{ github.run_number }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+
+      - name: Install workloads
+        run: dotnet workload restore
+      
+      - name: Package  
+        run: dotnet pack -c $BUILD_CONFIGURATION --output ${{ github.workspace }}/packages/
+
+      - name: Push
+        run: dotnet nuget push ${{ github.workspace }}/packages/*.nupkg --api-key ${{ secrets.NUGET_TOKEN }} --source https://api.nuget.org/v3/index.json --skip-duplicate
