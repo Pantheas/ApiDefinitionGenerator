@@ -19,7 +19,7 @@ env:
 
 jobs:
   package:
-    if: github.event.pull_request.merged == true
+    #if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
       VERSION_MINOR: ${{ github.run_number }}
