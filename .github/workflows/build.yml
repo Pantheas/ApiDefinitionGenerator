@@ -21,6 +21,6 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Log
-      run: echo GITHUB_WORKSPACE
+      run: echo $GITHUB_WORKSPACE
     - name: Build
-      run: dotnet build GITHUB_WORKSPACE/src/ApiDefinitionGenerator/ApiDefinitionGenerator.csproj
+      run: dotnet build $GITHUB_WORKSPACE/src/ApiDefinitionGenerator/ApiDefinitionGenerator.csproj
