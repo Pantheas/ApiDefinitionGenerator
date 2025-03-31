@@ -29,9 +29,6 @@ jobs:
       
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
-
-      - name: Install workloads
-        run: dotnet workload restore
       
       - name: Package  
         run: dotnet pack -c $BUILD_CONFIGURATION --output ${{ github.workspace }}/packages/
