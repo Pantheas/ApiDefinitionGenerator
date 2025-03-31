@@ -1,0 +1,3 @@
+﻿api_definition_generate_on_build_only = true
+api_definition_generator_target_namespace = Pantheas.CupsApi.Generated.Definition
+api_definition_generator_destination_path = C:\Users\jmorf\Repositories\kostya9.ApiClientGenerator\examples\CupsApi

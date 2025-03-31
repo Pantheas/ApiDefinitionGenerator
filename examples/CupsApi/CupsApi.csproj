@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>Pantheas.CupsApi.Definition</AssemblyName>
+        <RootNamespace>Pantheas.CupsApi.Definition</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference
+                Include="..\..\ApiDefinitionGenerator\ApiDefinitionGenerator.csproj"
+                OutputItemType="Analyzer"
+                ReferenceOutputAssembly="false" />
+        <ProjectReference Include="..\CupsApiSourceGenerator\CupsApiSourceGenerator.csproj" />
+    </ItemGroup>
+
+</Project>
