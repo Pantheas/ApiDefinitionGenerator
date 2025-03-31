@@ -20,7 +20,5 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
-    - name: Restore dependencies
-      run: dotnet restore /src/ApiDefinitionGenerator/ApiDefinitionGenerator.csproj
     - name: Build
-      run: dotnet build /src/ApiDefinitionGenerator/ApiDefinitionGenerator.csproj --no-restore
+      run: dotnet build /src/ApiDefinitionGenerator/ApiDefinitionGenerator.csproj
