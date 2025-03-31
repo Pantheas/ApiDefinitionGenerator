@@ -7,6 +7,13 @@
       <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
       <IsRoslynComponent>true</IsRoslynComponent>
       <RootNamespace>Pantheas.ApiDefinitionGenerator</RootNamespace>
+      <PackageId>Pantheas.ApiDefinitionGenerator</PackageId>
+      <Title>Pantheas.ApiDefinitionGenerator</Title>
+      <Authors>Pantheas</Authors>
+      <Description>Source generator to create API definition classes</Description>
+      <PackageProjectUrl>https://github.com/Pantheas/ApiDefinitionGenerator</PackageProjectUrl>
+      <PackageLicenseUrl>https://github.com/Pantheas/ApiDefinitionGenerator/blob/main/LICENSE</PackageLicenseUrl>
+      <RepositoryUrl>https://github.com/Pantheas/ApiDefinitionGenerator</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
